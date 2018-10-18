@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>ECharts 地图展示</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+  <div id="allContent">
+    <!--联动图表-->
+    <div class="left">
+    	<ul>
+	    	<li><button value="病人数" id='0' class="active">病人数：43555</button></li>
+	    	<li><button value="就诊数" id='1'>就诊数：324244</button></li>
+	    	<li><button value="病历数" id='2'>病历数：1313455</button></li>
+	    	<li><button value="交易金额" id='3'>交易金额：454565</button></li>
+	    	<li><button value="交易笔数" id='4'>交易笔数：635342</button></li>
+	    	<li><button value="随访数" id='5'>随访数：5242424</button></li>
+	    	<li><button value="影像数" id='6'>影像数：4232424</button></li>
+	    	<li><button value="牙齿检查数" id='7'>牙齿检查数：313133</button></li>
+	    	<li><button value="短信数" id='8'>短信数：6888889</button></li>
+        </ul>
+    </div>
+    <div class="right">
+      <div class="rightContent">
+    	<div class="top">
+    		<div class="chartsDiv">
+    		   <div id="charts1" style="height: 240px;"></div>
+    		</div>
+    		<div class="chartsDiv">
+    		  <div id="charts2" style="height: 240px;"></div>
+    		</div>
+    	</div>
+    	<div class="middle">
+    		<button id="back">返回</button>
+    		<div id="maps"></div>
+    		<div id="charts3" style="height: 300px;"></div>
+    	</div>
+    	<div class="bottom">
+    		<div class="tittle">
+    			<label>Top控件：</label>
+    			<button class="actives">Top10</button>
+    			<button id="top30">Top30</button>
+    			<button id="top100">Top100</button>
+    			<button id="all">All</button>
+    		</div>
+    		<table>
+    			<tr>
+    				<th>门诊名</th>
+    				<th>城市</th>
+    				<th>上线日期</th>
+    				<th>状态 </th>
+    				<th class="active">总病人数</th>
+    				<th>总就诊数</th>
+    				<th>总病历数</th>
+    				<th>总交易金额</th>
+    				<th>总交易数</th>
+    				<th>总随访数</th>
+    				<th>总影像数</th>
+    				<th>总牙检数</th>
+    				<th>总短信数</th>
+    			</tr>
+    			<tr>
+    				<td>摩尔口腔</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    				<td>30</td>
+    			</tr>
+    			<tr>
+    				<td>好牙医</td>
+    				<td>26</td>
+    				<td>25</td>
+    				<td>24</td>
+    				<td>27</td>
+    				<td>28</td>
+    				<td>29</td>
+    				<td>25</td>
+    				<td>26</td>
+    				<td>25</td>
+    				<td>28</td>
+    				<td>27</td>
+    				<td>26</td>
+    			</tr>
+    			<tr>
+    				<td>欢乐口腔</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    			</tr>
+    			<tr>
+    				<td>欢乐口腔</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    				<td>20</td>
+    			</tr>
+    			<tr>
+    				<td>牙博士口腔</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    				<td>10</td>
+    			</tr>
+    			<tr>
+    				<td>圣安口腔</td>
+    				<td>5</td>
+    				<td>5</td>
+    				<td>6</td>
+    				<td>4</td>
+    				<td>5</td>
+    				<td>6</td>
+    				<td>4</td>
+    				<td>6</td>
+    				<td>7</td>
+    				<td>9</td>
+    				<td>6</td>
+    				<td>8</td>
+    			</tr>
+    		</table>
+    	</div>
+      </div>
+    </div>
+    <!--<div class="middle">
+    	<div id="charts1" style="height: 300px;"></div>
+    	<div id="maps"></div>
+    </div>
+    <div class="right">
+    	<div id="charts2" style="height: 300px;"></div>
+	    <div id="charts3" style="height: 300px;"></div>
+    </div>-->
+  </div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="mapjs/china.js"></script>
+    <script type="text/javascript" src="js/index.js" ></script>
+</body>
+
+</html>
